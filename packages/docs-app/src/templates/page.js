@@ -9,6 +9,7 @@ import Layout from '../components/Layouts';
 // Components
 import PageHeader from '../components/PageHeader';
 import ComponentCode from '../components/ComponentCode';
+import Recipe from '../components/RecipeCode';
 import CodeSnippet from '../components/CodeSnippet';
 import ColorTable from '../components/ColorTable';
 import GridDocumentation from '../components/GridDocumentation';
@@ -104,7 +105,8 @@ const renderAst = new RehypeReact({
     'color-table': ColorTable,
     component: ComponentCode,
     'grid-documentation': GridDocumentation,
-    'breakpoints-documentation': BreakpointsDocumentation
+    'breakpoints-documentation': BreakpointsDocumentation,
+    recipe: Recipe
   }
 }).Compiler;
 /* eslint-enable react/prop-types */

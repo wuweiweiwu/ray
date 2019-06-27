@@ -1,0 +1,100 @@
+.component-example .page-h2:first-child {
+  margin-top: $ray-spacing-3xl;
+}
+
+.component-example {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  color: $ray-color-white;
+  margin-bottom: $ray-spacing-3xl;
+
+  &__live {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding: $ray-spacing-xl;
+    margin: 1.5rem 0 0;
+    background-color: #f5f7fa;
+    color: $ray-color-text-dark;
+    border: 1px solid $code-border;
+    border-top-left-radius: $ray-border-radius;
+    border-top-right-radius: $ray-border-radius;
+
+    &--light {
+      background-color: $ray-color-white;
+    }
+
+    &--rendered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .#{$ray-class-prefix}page-container {
+      background-color: rgb(128, 255, 179);
+    }
+
+    .#{$ray-class-prefix}grid {
+      background-color: rgb(255, 128, 128);
+    }
+
+    .#{$ray-class-prefix}grid__cell--span-4 {
+      background-color: rgb(159, 128, 255);
+      min-height: 10vh;
+    }
+  }
+
+  &__view-full-render {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: $ray-color-text-medium;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+  }
+
+  p {
+    padding: 0;
+  }
+}
+
+.component-toolbar {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  border-left: 1px solid $code-border;
+  border-right: 1px solid $code-border;
+}
+
+.component-toolbar__current {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid $code-border;
+
+  p {
+    color: $ray-color-text-medium;
+    padding: 0 1rem;
+  }
+}
+
+.component-toolbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 2;
+
+  a {
+    padding-left: 1rem;
+  }
+}
+
+.component-variation {
+  margin-top: 3rem;
+}

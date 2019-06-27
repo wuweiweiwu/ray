@@ -6,13 +6,18 @@ import Prism from 'prismjs';
 
 class CodeExample extends Component {
   static propTypes = {
-    htmlFile: PropTypes.string
+    htmlFile: PropTypes.string,
+    expandedDefault: PropTypes.bool
+  };
+
+  static defaultProps = {
+    expandedDefault: false
   };
 
   state = {
     copied: false,
     showBtn: false,
-    expandedCode: false
+    expandedCode: this.props.expandedDefault
   };
 
   componentDidMount = () => {

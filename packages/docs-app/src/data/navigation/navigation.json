@@ -68,5 +68,16 @@
         "title": "Tag"
       }
     }
+  },
+  "recipes": {
+    "title": "Recipes",
+    "children": {
+      "forms": {
+        "title": "Forms"
+      },
+      "Pages": {
+        "title": "Pages"
+      }
+    }
   }
 }
