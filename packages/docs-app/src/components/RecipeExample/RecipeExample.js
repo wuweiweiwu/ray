@@ -38,10 +38,26 @@ class ComponentExample extends Component {
     this._releaseAndInstantiateComponents();
   };
 
+  componentDidMount() {
+    this.evaluateScripts();
+  }
+
   componentDidUpdate({ htmlFile }) {
     const { prevHtmlFile } = this.props;
     if (prevHtmlFile !== htmlFile) {
       this._releaseAndInstantiateComponents();
+    }
+
+    this.evaluateScripts();
+  }
+
+  evaluateScripts() {
+    if (this._ref) {
+      const scriptTags = Array.from(this._ref.querySelectorAll('script'));
+
+      scriptTags.forEach(scriptElement => {
+        window.eval(scriptElement.innerHTML); // eslint-disable-line no-eval
+      });
     }
   }
 
