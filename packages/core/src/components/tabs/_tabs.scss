@@ -1,27 +1,72 @@
+@import '../../global/variables';
+@import '../../global/mixins/breakpoints';
+@import '../../global/mixins/exports';
+
 $tabs-border-size: 1px;
 
-.#{$ray-class-prefix}tabs {
-  border-bottom: $tabs-border-size solid $ray-color-blue-50;
-  display: flex;
+@mixin hide-scrollbar() {
+  overflow-x: -moz-scrollbars-none;
 
-  &__item {
-    @extend .#{$ray-class-prefix}text--body-large;
-    display: block;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  -ms-overflow-style: none;
+}
+
+@include exports('ray-tabs') {
+  .#{$ray-class-prefix}tabs {
+    display: flex;
+    border-top: 1px solid hsl(240, 100%, 95%);
+    border-right: 1px solid hsl(240, 100%, 95%);
+    border-left: 1px solid hsl(240, 100%, 95%);
+    border-bottom: 1px solid hsl(240, 100%, 95%);
+    overflow-y: hidden;
+    overflow-x: auto;
+    @include hide-scrollbar;
+  }
+
+  .#{$ray-class-prefix}tabs__item {
     cursor: pointer;
-    color: $ray-color-blue-50;
-    text-align: center;
-    min-width: 200px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: -$tabs-border-size !important;
+    color: hsl(240, 100%, 75%);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $ray-color-gray-10;
+    position: relative;
+    bottom: -1px;
+    z-index: 1;
+    display: block;
 
-    &:hover {
-      background-color: $ray-color-blue-50;
-      border-bottom: 1px solid $ray-color-blue-50;
+    &:first-of-type {
+      margin-left: 1rem;
+    }
+
+    &:last-of-type {
+      margin-right: 1rem;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 2.5rem;
     }
 
     &--active {
+      color: $ray-color-blue-50;
       border-bottom: 1px solid $ray-color-blue-50;
+    }
+
+    @include ray-breakpoint(desktop) {
+      display: block;
+      text-align: center;
+      min-width: 200px;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: -$tabs-border-size !important;
+      border-bottom: $tabs-border-size solid $ray-color-gray-30;
+
+      &:hover {
+        color: $ray-color-text-dark;
+      }
     }
   }
 }
