@@ -69,4 +69,8 @@ $tabs-border-size: 1px;
       }
     }
   }
+
+  [data-ray-tab] {
+    display: none;
+  }
 }
