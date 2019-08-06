@@ -20,7 +20,7 @@ export default function Card({
       {...props}
       className={clsx('ray-card', {
         'ray-card--row': row,
-        [`${className}`]: !!className
+        [className]: className
       })}
     >
       <div
