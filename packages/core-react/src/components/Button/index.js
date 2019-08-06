@@ -18,7 +18,7 @@ export default function Button({
       className={clsx('ray-button', `ray-button--${type}`, {
         'ray-button--compact': compact,
         'ray-button--danger': danger,
-        [`${className}`]: !!className
+        [className]: className
       })}
       disabled={disabled}
     >
